@@ -1,0 +1,194 @@
+﻿<!-- ko with: reports -->
+@*<div class="heading">
+        <h2>Отчёты</h2>
+
+        <a class="download-link" href="@Url.Action("SalesReport", "Report")"><i class="fa fa-download" aria-hidden="true"></i> Скачать отчет о продажах</a>
+    </div>
+    <div class="row">
+        <section class="col-md-24">
+            <div id="chart" style="width: 100%; height: 350px;"></div>
+        </section>
+    </div>*@
+<div class="row">
+    <div class="col-sm-9 col-lg-9">
+        <!-- MAIL BLOCK -->
+        <div class="dash-unit">
+            <dtitle>Сообщения о неполадках</dtitle>
+            <hr>
+            <div class="framemail">
+                <div class="window">
+                    <ul class="mail">
+                        <li>
+                            <i class="unread"></i>
+                            <img class="avatar" src="/Content/images/photo01.jpeg" alt="avatar">
+                            <p class="sender">Сидоров И.В.</p>
+                            <p class="message"><strong>Обнаружена неполадка на конвейре 1</strong> - устранена за 1 час.</p>
+                            <div class="actions">
+                                <a><img src="http://png-1.findicons.com/files//icons/2232/wireframe_mono/16/undo.png" alt="reply"></a>
+                                <a><img src="http://png-1.findicons.com/files//icons/2232/wireframe_mono/16/star_fav.png" alt="favourite"></a>
+                                <a><img src="http://png-4.findicons.com/files//icons/2232/wireframe_mono/16/tag.png" alt="label"></a>
+                                <a><img src="http://png-4.findicons.com/files//icons/2232/wireframe_mono/16/trash.png" alt="delete"></a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="read"></i>
+                            <img class="avatar" src="/Content/images/photo02.jpg" alt="avatar">
+                            <p class="sender">Егоров Е.П.</p>
+                            <p class="message"><strong>Обнаружена неполадка на конвейре 2</strong> - устранена за 2 часа.</p>
+                            <div class="actions">
+                                <a><img src="http://png-1.findicons.com/files//icons/2232/wireframe_mono/16/undo.png" alt="reply"></a>
+                                <a><img src="http://png-1.findicons.com/files//icons/2232/wireframe_mono/16/star_fav.png" alt="favourite"></a>
+                                <a><img src="http://png-4.findicons.com/files//icons/2232/wireframe_mono/16/tag.png" alt="label"></a>
+                                <a><img src="http://png-4.findicons.com/files//icons/2232/wireframe_mono/16/trash.png" alt="delete"></a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="read"></i>
+                            <img class="avatar" src="/Content/images/photo03.jpg" alt="avatar">
+                            <p class="sender">Петров П.П.</p>
+                            <p class="message"><strong>Обнаружена неполадка на конвейре 2</strong> - устранена за 30 мин.</p>
+                            <div class="actions">
+                                <a><img src="http://png-1.findicons.com/files//icons/2232/wireframe_mono/16/undo.png" alt="reply"></a>
+                                <a><img src="http://png-1.findicons.com/files//icons/2232/wireframe_mono/16/star_fav.png" alt="favourite"></a>
+                                <a><img src="http://png-4.findicons.com/files//icons/2232/wireframe_mono/16/tag.png" alt="label"></a>
+                                <a><img src="http://png-4.findicons.com/files//icons/2232/wireframe_mono/16/trash.png" alt="delete"></a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="read"></i>
+                            <img class="avatar" src="/Content/images/photo04.jpg" alt="avatar">
+                            <p class="sender">Васильев В.В.</p>
+                            <p class="message"><strong>Обнаружена неполадка на конвейре 3</strong> - устранена за 1 час.</p>
+                            <div class="actions">
+                                <a><img src="http://png-1.findicons.com/files//icons/2232/wireframe_mono/16/undo.png" alt="reply"></a>
+                                <a><img src="http://png-1.findicons.com/files//icons/2232/wireframe_mono/16/star_fav.png" alt="favourite"></a>
+                                <a><img src="http://png-4.findicons.com/files//icons/2232/wireframe_mono/16/tag.png" alt="label"></a>
+                                <a><img src="http://png-4.findicons.com/files//icons/2232/wireframe_mono/16/trash.png" alt="delete"></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div><!-- /dash-unit -->
+    </div><!-- /span3 -->
+    <!-- FAST CONTACT BLOCK -->
+    <div class="col-sm-3 col-lg-3">
+        <div class="dash-unit">
+            <dtitle>Отправить сообщение</dtitle>
+            <hr>
+            <div class="cont">
+                <form action="#get-in-touch" method="POST" id="contact">
+                    <input type="text" id="contactname" name="contactname" placeholder="Конвейер">
+                    <input type="text" id="email" name="email" placeholder="Время на устранение">
+                    <div class="textarea-container" style="margin: 18px -18px 0 18px;"><textarea id="message" name="message" placeholder="Сообщение о неполадках"></textarea></div>
+                    <input type="submit" id="submit" name="submit" value="Отправить">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- FIRST ROW OF BLOCKS -->
+<div class="row">
+    <!-- USER PROFILE BLOCK -->
+    <div class="col-sm-3 col-lg-3">
+        <div class="dash-unit">
+            <dtitle>Профиль пользователя</dtitle>
+            <hr>
+            <div class="thumbnail">
+                <img src="/Content/images/face80x80.jpg" alt="Marcel Newman" class="img-circle">
+            </div><!-- /thumbnail -->
+            <h1>Редченко Иван</h1>
+            <h3>Администратор</h3>
+            <br>
+            <div class="info-user">
+                <span aria-hidden="true" class="li_user fs1"></span>
+                <span aria-hidden="true" class="li_settings fs1"></span>
+                <span aria-hidden="true" class="li_mail fs1"></span>
+                <span aria-hidden="true" class="li_key fs1"></span>
+            </div>
+        </div>
+    </div>
+    <!-- DONUT CHART BLOCK -->
+    <div class="col-sm-3 col-lg-3">
+        <div class="dash-unit">
+            <dtitle>Выполнение плана</dtitle>
+            <hr>
+            <div id="load"></div>
+            <h2>85%</h2>
+            <h4>Рекомендуется увеличить завтрашнюю смену на 2 часа.</h4>
+        </div>
+    </div>
+
+    <!-- SWITCHES BLOCK -->
+    <div class="col-sm-3 col-lg-3">
+        <div class="dash-unit">
+            <dtitle>Остановка конвейеров</dtitle>
+            <hr>
+            @*<div class="info-user">
+                <span aria-hidden="true" class="li_params fs2"></span>
+            </div>*@
+            <br>
+            <div class="switch">
+                <input type="radio" class="switch-input" name="view" value="on" id="on" checked="">
+                <label for="on" class="switch-label switch-label-off" style="color: black;">1к Вкл</label>
+                <input type="radio" class="switch-input" name="view" value="off" id="off">
+                <label for="off" class="switch-label switch-label-on" style="color: black;">Откл</label>
+                <span class="switch-selection"></span>
+            </div>
+            <div class="switch">
+                <input type="radio" class="switch-input" name="view" value="on" id="on" checked="">
+                <label for="on" class="switch-label switch-label-off" style="color: black;">2к Вкл</label>
+                <input type="radio" class="switch-input" name="view" value="off" id="off">
+                <label for="off" class="switch-label switch-label-on" style="color: black;">Откл</label>
+                <span class="switch-selection"></span>
+            </div>
+            <div class="switch">
+                <input type="radio" class="switch-input" name="view" value="on" id="on" checked="">
+                <label for="on" class="switch-label switch-label-off" style="color: black;">3к Вкл</label>
+                <input type="radio" class="switch-input" name="view" value="off" id="off">
+                <label for="off" class="switch-label switch-label-on" style="color: black;">Откл</label>
+                <span class="switch-selection"></span>
+            </div>
+
+            @*<div class="switch switch-blue">
+            <input type="radio" class="switch-input" name="view2" value="week2" id="week2" checked="">
+            <label for="week2" class="switch-label switch-label-off">Week</label>
+            <input type="radio" class="switch-input" name="view2" value="month2" id="month2">
+            <label for="month2" class="switch-label switch-label-on">Month</label>
+            <span class="switch-selection"></span>
+        </div>
+
+        <div class="switch switch-yellow">
+            <input type="radio" class="switch-input" name="view3" value="yes" id="yes" checked="">
+            <label for="yes" class="switch-label switch-label-off">Yes</label>
+            <input type="radio" class="switch-input" name="view3" value="no" id="no">
+            <label for="no" class="switch-label switch-label-on">No</label>
+            <span class="switch-selection"></span>
+        </div>*@
+        </div>
+    </div>
+
+    <div class="col-sm-3 col-lg-3">
+        <!-- LOCAL TIME BLOCK -->
+        <div class="half-unit">
+            <dtitle>Текущее время</dtitle>
+            <hr>
+            <div class="clockcenter">
+                <digiclock>12:45:25</digiclock>
+            </div>
+        </div>
+        <!-- SERVER UPTIME -->
+        <div class="half-unit">
+            <dtitle>Общее время работы</dtitle>
+            <hr>
+            <div class="cont">
+                <p><img src="/Content/images/up.png" alt=""> <bold>383 мин.</bold> </p>
+            </div>
+        </div>
+    </div>
+</div><!-- /row -->
+
+<script src="~/Scripts/gauge.js"></script>
+<!-- /ko -->

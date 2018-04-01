@@ -1,0 +1,27 @@
+﻿.btn.create-link {
+    background: #b2c831 !important;
+    color: white !important;
+}
+
+li.active > a {
+    background: #b2c831 !important;
+    border: #b2c831 !important;
+}
+
+.back-link {
+    display: inline;
+    float: left;
+    margin-right: 1em;
+    color: white;
+}
+
+.search.input-group {
+    width: 300px;
+    float: right;
+    margin-right: 1em;
+    padding-top: 2px;
+}
+
+input[type=text], textarea{
+    background: white;
+}

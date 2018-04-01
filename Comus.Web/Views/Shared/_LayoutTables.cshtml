@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title – приложение ASP.NET</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style type="text/css">
+        body {
+            padding-top: 60px;
+        }
+    </style>
+</head>
+<body style="display: none" data-bind="visible: true">
+    <div class="navbar-nav navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="/Content/images/logo30.png" alt=""> BLOCKS Dashboard</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="sale"><a href="#" data-bind="click: navigateToSale"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Продажи</a></li>
+                    <li class="product"><a href="#" data-bind="click: navigateToProduct"><i class="fa fa-barcode" aria-hidden="true"></i> Товары</a></li>
+                    <li class="client"><a href="#" data-bind="click: navigateToClient"><i class="fa fa-users" aria-hidden="true"></i> Покупатели</a></li>
+                    <li class="employee"><a href="#" data-bind="click: navigateToEmployee"><i class="fa fa-sitemap" aria-hidden="true"></i> Сотрудники</a></li>
+                    <li class="report"><a href="#" data-bind="click: navigateToReport"><i class="fa fa-line-chart" aria-hidden="true"></i> Отчёты</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+    <div class="container">
+        @RenderBody()
+        @RenderSection("SPAViews", required: false)
+    </div>
+    @*<div class="wrapper container">
+        <header>
+            <a class="brand" href="/">ОАО АТМ-Кубань</a>
+            @Html.Partial("_LoginPartial")
+        </header>
+        <nav class="main-menu navbar navbar-default">
+            <ul class="nav navbar-nav">
+                <li class="sale"><a href="#" data-bind="click: navigateToSale"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Продажи</a></li>
+                <li class="product"><a href="#" data-bind="click: navigateToProduct"><i class="fa fa-barcode" aria-hidden="true"></i> Товары</a></li>
+                <li class="client"><a href="#" data-bind="click: navigateToClient"><i class="fa fa-users" aria-hidden="true"></i> Покупатели</a></li>
+                <li class="employee"><a href="#" data-bind="click: navigateToEmployee"><i class="fa fa-sitemap" aria-hidden="true"></i> Сотрудники</a></li>
+                <li class="report"><a href="#" data-bind="click: navigateToReport"><i class="fa fa-line-chart" aria-hidden="true"></i> Отчёты</a></li>
+            </ul>
+        </nav>
+        @RenderBody()
+        @RenderSection("SPAViews", required: false)
+    </div>
+    <footer></footer>*@
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/highcharts")
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

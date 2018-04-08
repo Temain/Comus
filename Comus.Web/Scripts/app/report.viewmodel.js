@@ -24,48 +24,96 @@
     });
 
     self.showChart = function(data) {
-        //$('#chart').highcharts({
-        //    credits: {
-        //        enabled : false
-        //    },
-        //    title: {
-        //        text: 'Продажи ОАО АТМ-Кубань',
-        //        x: 0 //center
-        //    },
-        //    subtitle: {
-        //        text: 'в 2016 году',
-        //        x: 0
-        //    },
-        //    xAxis: {
-        //        categories: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
-        //            'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
-        //    },
-        //    yAxis: {
-        //        title: {
-        //            text: 'Сумма, руб.'
-        //        },
-        //        plotLines: [{
-        //            value: 0,
-        //            width: 1,
-        //            color: '#808080'
-        //        }]
-        //    },
-        //    tooltip: {
-        //        formatter: function () {
-        //            return this.x + ': ' + this.point.y + ' руб.';
-        //        },
-        //        valueSuffix: ' руб.'
-        //    },
-        //    legend: {
-        //        enabled: false
-        //    },
-        //    series: [{
-        //        name: '',
-        //        data: data
-        //    }]
-        //});
+        var info0 = new Highcharts.Chart({
+            credits: {
+                enabled : false
+            },
+            exporting: { enabled: false },
+            title: {
+                text: '',
+                x: 0 //center
+            },
+            //colors: ['#2b908f', '#90ee7e', '#f45b5b', '#7798BF', '#aaeeee', '#ff0066',
+            //    '#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
+            chart: {
+                renderTo: 'analytics',
+                backgroundColor: null,
+                plotBackgroundColor: 'none',
+            },
+            //subtitle: {
+            //    text: 'в 2016 году',
+            //    x: 0
+            //},
+            xAxis: {
+                categories: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
+                    'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+                lineColor: '#ffffff',
+                tickColor: '#ffffff',
+                labels: {
+                    style: {
+                        color: '#ffffff',
+                    }
+                },
+                title: {
+                    style: {
+                        color: '#ffffff',
+                    }
+                },
+            },
+            yAxis: {
+                title: {
+                    // enabled: false,
+                    text: 'Произведено, ед.',
+                    style: {
+                        color: '#ffffff',
+                    }
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#ffffff'
+                }],
+                lineColor: '#ffffff',
+                tickColor: '#ffffff',
+                labels: {
+                    // enabled: false,
+                    style: {
+                        color: '#ffffff',
+                    }
+                },
+            },
+            //tooltip: {
+            //    formatter: function () {
+            //        return this.x + ': ' + this.point.y + ' руб.';
+            //    },
+            //    valueSuffix: ' руб.'
+            //},
+            legend: {
+                enabled: true,
+                //align: 'right',
+                //layout: 'vertical',
+                //verticalAlign: 'middle',
+                borderWidth: 0,
+                itemStyle: {
+                    color: '#ffffff',
+                }
+            },
+            //series: [{
+            //    name: '',
+            //    data: data
+            //}]
+            series: [{
+                name: 'По плану',
+                data: [105000, 100000, 100000, 98000, 95000, 94000, 98000, 100000, 100000, 100000, 100000, 100000],
+                color: '#2b908f'
+            },{
+                name: 'Выполнено',
+                data: [110000, 105000, 100000, 95000, 90000, 91000, 95000, 98000, 101000, 104000, 103000, 101000],
+                color: '#90ee7e'
+            }],
+        });
 
-        info = new Highcharts.Chart({
+        var info = new Highcharts.Chart({
             chart: {
                 renderTo: 'load',
                 margin: [0, 0, 0, 0],
@@ -108,9 +156,9 @@
                         connectorColor: '#000000'
                     }
                 }]
-        });
+        });     
 
-        info = new Highcharts.Chart({
+        var info3 = new Highcharts.Chart({
             chart: {
                 renderTo: 'space',
                 margin: [0, 0, 0, 0],

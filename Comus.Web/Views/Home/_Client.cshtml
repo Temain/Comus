@@ -4,7 +4,7 @@
 
 <div class="row">
     <div class="heading" style="margin-bottom: 1em;">
-        <h2 style="display: inline;">Покупатели</h2>
+        <h2 style="display: inline;">Партнёры</h2>
         <a class="btn create-link pull-right" href="/#client/create"><i class="glyphicon glyphicon-plus" aria-hidden="true"></i> Добавить</a>
     </div>
 </div>
@@ -15,7 +15,9 @@
             <thead>
                 <tr>
                     <th class="text-center">№</th>
-                    <th>ФИО</th>
+                    <th>Компания</th>
+                    <th>Размер перс. скидки</th>
+                    <th>ФИО ответственного</th>
                     <th class="text-center">Телефон</th>
                     <th class="text-center">Действия</th>
                 </tr>
@@ -23,10 +25,13 @@
             <tbody data-bind="foreach: list">
                 <tr class="odd" data-bind="css: { even: ($index() % 2) == 0 }">
                     <td class="text-center" data-bind="text: ((($parent.selectedPage() - 1) * $parent.selectedPageSize()) + $index() + 1)"></td>
+                    <td data-bind="text: company"></td>
+                    <td data-bind="text: (discount() == null ? '0' : discount() + '%')"></td>
                     <td data-bind="text: clientFullName()"></td>
                     <td class="text-center" data-bind="text: phone"></td>
                     <td class="text-center actions">
                         <a href="#" data-bind="attr : { href: '/#client/' + clientId() }, tooltip: { title: 'Перейти к редактированию', placement: 'left', trigger: 'hover' }"><i class="glyphicon glyphicon-pencil"></i></a>
+                        <a href="#" data-bind="attr : { href: '/#client/' + clientId() }, tooltip: { title: 'Печать договора', placement: 'left', trigger: 'hover' }"><i class="glyphicon glyphicon-print text-info"></i></a>
                         <a href="#" data-bind="click: $parent.removeClient, tooltip: { title: 'Удалить', placement: 'bottom', trigger: 'hover' }"><i class="glyphicon glyphicon-trash text-danger"></i></a>
                     </td>
                 </tr>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -83,6 +83,18 @@
     <Compile Include="Migrations\201605272248355_RemovePhoneFromEmployee.Designer.cs">
       <DependentUpon>201605272248355_RemovePhoneFromEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804080828088_AddCompany.cs" />
+    <Compile Include="Migrations\201804080828088_AddCompany.Designer.cs">
+      <DependentUpon>201804080828088_AddCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804080847135_AddDiscount.cs" />
+    <Compile Include="Migrations\201804080847135_AddDiscount.Designer.cs">
+      <DependentUpon>201804080847135_AddDiscount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804080854159_RenameDiscount.cs" />
+    <Compile Include="Migrations\201804080854159_RenameDiscount.Designer.cs">
+      <DependentUpon>201804080854159_RenameDiscount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Sale.cs" />
     <Compile Include="Models\Product.cs" />
@@ -108,6 +120,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605272248355_RemovePhoneFromEmployee.resx">
       <DependentUpon>201605272248355_RemovePhoneFromEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804080828088_AddCompany.resx">
+      <DependentUpon>201804080828088_AddCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804080847135_AddDiscount.resx">
+      <DependentUpon>201804080847135_AddDiscount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804080854159_RenameDiscount.resx">
+      <DependentUpon>201804080854159_RenameDiscount.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

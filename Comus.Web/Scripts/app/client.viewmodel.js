@@ -72,6 +72,12 @@
 var EditClientViewModel = function (app, dataModel) {
     var self = this;
 
+    self.company = ko.observable().extend({
+        required: {
+            params: true,
+            message: "Необходимо указать компанию."
+        }
+    });
     self.lastName = ko.observable().extend({
         required: {
             params: true,
@@ -136,6 +142,13 @@ var EditClientViewModel = function (app, dataModel) {
 var CreateClientViewModel = function (app, dataModel) {
     var self = this;
 
+    self.company = ko.observable().extend({
+        required: {
+            params: true,
+            message: "Необходимо указать компанию."
+        }
+    });
+    self.discount = ko.observable();
     self.lastName = ko.observable().extend({
         required: {
             params: true,
@@ -171,6 +184,8 @@ var CreateClientViewModel = function (app, dataModel) {
                 // showAlert('danger', 'Произошла ошибка при добавлении сотрудника. Обратитесь в службу технической поддержки.');
             },
             success: function (response) {
+                self.company('');
+                self.discount('');
                 self.lastName('');
                 self.firstName('');
                 self.middleName('');

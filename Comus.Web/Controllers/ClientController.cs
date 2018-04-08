@@ -28,8 +28,7 @@ namespace Comus.Web.Controllers
         public IEnumerable<ClientViewModel> GetClients()
         {
             var clients = UnitOfWork.Repository<Client>()
-                .Get(
-                    orderBy: o => o.OrderBy(p => p.Person.LastName)
+                .Get(orderBy: o => o.OrderBy(p => p.Person.LastName)
                         .ThenBy(p => p.Person.FirstName),
                     includeProperties: "Person");
 

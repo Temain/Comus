@@ -18,6 +18,16 @@ namespace Comus.Domain.Models
         public int ClientId { get; set; }
 
         /// <summary>
+        /// Компания
+        /// </summary>
+        public string Company { get; set; }
+
+        /// <summary>
+        /// Размер персональной скидки
+        /// </summary>
+        public decimal? Discount { get; set; }
+
+        /// <summary>
         /// Физическое лицо
         /// </summary>
         public int PersonId { get; set; }

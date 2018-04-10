@@ -95,6 +95,10 @@
     <Compile Include="Migrations\201804080854159_RenameDiscount.Designer.cs">
       <DependentUpon>201804080854159_RenameDiscount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804101702591_AddFIelds.cs" />
+    <Compile Include="Migrations\201804101702591_AddFIelds.Designer.cs">
+      <DependentUpon>201804101702591_AddFIelds.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Sale.cs" />
     <Compile Include="Models\Product.cs" />
@@ -129,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804080854159_RenameDiscount.resx">
       <DependentUpon>201804080854159_RenameDiscount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804101702591_AddFIelds.resx">
+      <DependentUpon>201804101702591_AddFIelds.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

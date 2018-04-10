@@ -163,6 +163,7 @@ var CreateClientViewModel = function (app, dataModel) {
     });
     self.middleName = ko.observable();
     self.phone = ko.observable();
+    self.volumeOfPurchases = ko.observable();
 
     self.save = function () {
         var result = ko.validation.group(self, { deep: true });

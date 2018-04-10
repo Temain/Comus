@@ -149,6 +149,8 @@ var CreateProductViewModel = function (app, dataModel) {
         }
     });
     self.inStock = ko.observable();
+    self.warehouse = ko.observable();
+    self.maxCapacity = ko.observable();
 
     self.save = function() {
         var result = ko.validation.group(self, { deep: true });

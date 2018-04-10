@@ -18,6 +18,8 @@
                     <th>Название упаковки</th>
                     <th class="text-center">Цена</th>
                     <th class="text-center">В наличии</th>
+                    <th class="text-center">Склад</th>
+                    <th class="text-center">Макс. вместимость</th>
                     <th class="text-center">Действия</th>
                 </tr>
             </thead>
@@ -27,6 +29,8 @@
                     <td data-bind="text: productName()"></td>
                     <td class="text-center" data-bind="text: cost"></td>
                     <td class="text-center" data-bind="text: inStock"></td>
+                    <td class="text-center" data-bind="text: warehouse()"></td>
+                    <td class="text-center" data-bind="text: maxCapacity()"></td>
                     <td class="text-center actions">
                         <a href="#" data-bind="attr : { href: '/#product/' + productId() }, tooltip: { title: 'Перейти к редактированию', placement: 'left', trigger: 'hover' }"><i class="glyphicon glyphicon-pencil"></i></a>
                         <a href="#" data-bind="click: $parent.removeProduct, tooltip: { title: 'Удалить', placement: 'bottom', trigger: 'hover' }"><i class="glyphicon glyphicon-trash text-danger"></i></a>

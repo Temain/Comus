@@ -31,6 +31,16 @@ namespace Comus.Web.Models
         /// </summary>
         public int InStock { get; set; }
 
+        /// <summary>
+        /// Склад
+        /// </summary>
+        public string Warehouse { get; set; }
+
+        /// <summary>
+        /// Максимальная вместимость
+        /// </summary>
+        public string MaxCapacity { get; set; }
+
 
         public void CreateMappings(IConfiguration configuration)
         {

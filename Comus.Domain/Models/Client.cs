@@ -28,6 +28,11 @@ namespace Comus.Domain.Models
         public decimal? Discount { get; set; }
 
         /// <summary>
+        /// Средний объем закупок
+        /// </summary>
+        public decimal? VolumeOfPurchases { get; set; }
+
+        /// <summary>
         /// Физическое лицо
         /// </summary>
         public int PersonId { get; set; }

@@ -113,6 +113,95 @@
             }],
         });
 
+        var info1 = new Highcharts.Chart({
+            credits: {
+                enabled: false
+            },
+            exporting: { enabled: false },
+            title: {
+                text: '',
+                x: 0 //center
+            },
+            //colors: ['#2b908f', '#90ee7e', '#f45b5b', '#7798BF', '#aaeeee', '#ff0066',
+            //    '#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
+            chart: {
+                renderTo: 'analytics-year',
+                backgroundColor: null,
+                plotBackgroundColor: 'none',
+            },
+            //subtitle: {
+            //    text: 'в 2016 году',
+            //    x: 0
+            //},
+            xAxis: {
+                categories: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
+                    'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+                lineColor: '#ffffff',
+                tickColor: '#ffffff',
+                labels: {
+                    style: {
+                        color: '#ffffff',
+                    }
+                },
+                title: {
+                    style: {
+                        color: '#ffffff',
+                    }
+                },
+            },
+            yAxis: {
+                title: {
+                    // enabled: false,
+                    text: 'Произведено, ед.',
+                    style: {
+                        color: '#ffffff',
+                    }
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#ffffff'
+                }],
+                lineColor: '#ffffff',
+                tickColor: '#ffffff',
+                labels: {
+                    // enabled: false,
+                    style: {
+                        color: '#ffffff',
+                    }
+                },
+            },
+            //tooltip: {
+            //    formatter: function () {
+            //        return this.x + ': ' + this.point.y + ' руб.';
+            //    },
+            //    valueSuffix: ' руб.'
+            //},
+            legend: {
+                enabled: true,
+                //align: 'right',
+                //layout: 'vertical',
+                //verticalAlign: 'middle',
+                borderWidth: 0,
+                itemStyle: {
+                    color: '#ffffff',
+                }
+            },
+            //series: [{
+            //    name: '',
+            //    data: data
+            //}]
+            series: [{
+                name: '2018г.',
+                data: [125000, 130000, 115000, 110000, 100000, 110000],
+                color: '#f45b5b'
+            }, {
+                name: '2017г.',
+                data: [110000, 105000, 100000, 95000, 90000, 91000, 95000, 98000, 101000, 104000, 103000, 101000],
+                color: '#7798BF'
+            }],
+        });
+
         var info = new Highcharts.Chart({
             chart: {
                 renderTo: 'load',

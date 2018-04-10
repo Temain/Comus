@@ -17,6 +17,7 @@
                     <th class="text-center">№</th>
                     <th>Компания</th>
                     <th>Размер перс. скидки</th>
+                    <th>Средний объём закупок</th>
                     <th>ФИО ответственного</th>
                     <th class="text-center">Телефон</th>
                     <th class="text-center">Действия</th>
@@ -27,6 +28,7 @@
                     <td class="text-center" data-bind="text: ((($parent.selectedPage() - 1) * $parent.selectedPageSize()) + $index() + 1)"></td>
                     <td data-bind="text: company"></td>
                     <td data-bind="text: (discount() == null ? '0' : discount() + '%')"></td>
+                    <td data-bind="text: (volumeOfPurchases() == null ? '0' : volumeOfPurchases())"></td>
                     <td data-bind="text: clientFullName()"></td>
                     <td class="text-center" data-bind="text: phone"></td>
                     <td class="text-center actions">

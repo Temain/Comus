@@ -13,6 +13,8 @@ namespace Comus.Domain.Context
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Sale> Sales { get; set; }
+        public DbSet<Conveyor> Conveyors { get; set; }
+        public DbSet<ConveyorDefect> ConveyorsDefects { get; set; }
 
         public ApplicationDbContext()
             : base("ComusConnection", throwIfV1Schema: false)

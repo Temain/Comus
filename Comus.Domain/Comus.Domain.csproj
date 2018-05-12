@@ -99,7 +99,13 @@
     <Compile Include="Migrations\201804101702591_AddFIelds.Designer.cs">
       <DependentUpon>201804101702591_AddFIelds.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804211723356_AddConveyorTables.cs" />
+    <Compile Include="Migrations\201804211723356_AddConveyorTables.Designer.cs">
+      <DependentUpon>201804211723356_AddConveyorTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Conveyor.cs" />
+    <Compile Include="Models\ConveyorDefect.cs" />
     <Compile Include="Models\Sale.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Client.cs" />
@@ -136,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804101702591_AddFIelds.resx">
       <DependentUpon>201804101702591_AddFIelds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804211723356_AddConveyorTables.resx">
+      <DependentUpon>201804211723356_AddConveyorTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

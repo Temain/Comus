@@ -44,7 +44,7 @@ namespace Comus.Web.Controllers
                 .GetQ(
                     orderBy: o => o.OrderBy(p => p.Person.LastName)
                         .ThenBy(p => p.Person.FirstName),
-                    includeProperties: "Person, ClientSource, ProductType, ClientStatus, Employee, Employee.Person");
+                    includeProperties: "Person, ClientSource, ProductType, ClientStatus, Employee.Person");
 
             var clients = clientsList
                 .Skip((page - 1) * pageSize)
@@ -67,15 +67,20 @@ namespace Comus.Web.Controllers
         [ResponseType(typeof(Client))]
         public IHttpActionResult GetClient(int id)
         {
-            var client = UnitOfWork.Repository<Client>()
-                .Get(x => x.ClientId == id, includeProperties: "Person, ClientSource, ProductType, ClientStatus, Employee, Employee.Person")
-                .SingleOrDefault();
-            if (client == null)
-            {
-                return NotFound();
-            }
+            var clientViewModel = new ClientViewModel();
 
-            var clientViewModel = Mapper.Map<Client, ClientViewModel>(client);
+            if (id != 0)
+            {
+                var client = UnitOfWork.Repository<Client>()
+                    .Get(x => x.ClientId == id, includeProperties: "Person, ClientSource, ProductType, ClientStatus, Employee.Person")
+                    .SingleOrDefault();
+                if (client == null)
+                {
+                    return NotFound();
+                }
+
+                clientViewModel = Mapper.Map<Client, ClientViewModel>(client);
+            }
 
             var clientSources = UnitOfWork.Repository<ClientSource>().Get().ToList();
             clientViewModel.ClientSources = Mapper.Map<List<ClientSource>, List<ClientSourceViewModel>>(clientSources);
@@ -85,6 +90,9 @@ namespace Comus.Web.Controllers
 
             var clientStatuses = UnitOfWork.Repository<ClientStatus>().Get().ToList();
             clientViewModel.ClientStatuses = Mapper.Map<List<ClientStatus>, List<ClientStatusViewModel>>(clientStatuses);
+
+            var employees = UnitOfWork.Repository<Employee>().Get(includeProperties: "Person").ToList();
+            clientViewModel.Employees = Mapper.Map<List<Employee>, List<EmployeeViewModel>>(employees);
 
             return Ok(clientViewModel);
         }
@@ -142,13 +150,13 @@ namespace Comus.Web.Controllers
 
             var client = Mapper.Map<ClientViewModel, Client>(viewModel);
             client.Person.CreatedAt = DateTime.Now;
+            client.Person.Employees = null;
             client.CreatedAt = DateTime.Now;          
-
+            
             UnitOfWork.Repository<Client>().Insert(client);
             UnitOfWork.Save();
 
             return Ok();
-            // return CreatedAtRoute("DefaultApi", new { id = client.ClientId }, client);
         }
 
         // DELETE: api/Client/5

@@ -8,51 +8,53 @@
                 <legend>Редактирование</legend>
 
                 <div class="body">
-                    <label for="name">Организация</label>
-                    <input class="input-huge" id="company" data-bind="value: company">
+                    <label for="company">Организация</label>
+                    <input id="company" class="input-huge form-control" data-bind="value: company" placeholder="Введите наименование...">
+
+                    <label for="lastName">ФИО конт. лица</label>
+                    <input id="lastName" class="input-huge form-control" data-bind="value: lastName" placeholder="Введите фамилию...">
+                    <input class="input-huge form-control" data-bind="value: firstName" placeholder="Введите имя...">
+                    <input class="input-huge form-control" data-bind="value: middleName" placeholder="Введите отчество...">
 
                     <label for="phone">Номер телефона</label>
-                    <input id='phone' class="input-huge" data-bind="value: phone" />
+                    <input id='phone' class="input-huge form-control" data-bind="value: phone" placeholder="x (xxx) xxx-xx-xx" />
 
-                    <label for="surname">Интересующая продукция</label>
-                    <select class="input-huge">
-                        @*<option></option>*@
-                        <option>Упаковка картонная</option>
-                    </select>
+                    <label for="productType">Интересующая продукция</label>
+                    <select id="productType" class="input-huge form-control" data-bind="options: productTypes,
+                       optionsText: 'productTypeName',
+                       optionsValue: 'productTypeId',
+                       value: productTypeId,
+                       optionsCaption: ''"></select>
 
-                    <label for="surname">Источник обращения</label>
-                    <select class="input-huge">
-                        @*<option></option>*@
-                        <option>Сайт</option>
-                        <option>Соц. сети</option>
-                        <option>Наружная реклама</option>
-                        <option>Indoor реклама</option>
-                    </select>
+                    <label for="clientSource">Источник обращения</label>
+                    <select id="clientSource" class="input-huge form-control" data-bind="options: clientSources,
+                       optionsText: 'clientSourceName',
+                       optionsValue: 'clientSourceId',
+                       value: clientSourceId,
+                       optionsCaption: ''"></select>
 
-                    <label>Ответственный менеджер</label>
-                    <select class="input-huge">
-                        @*<option></option>*@
-                        <option>Огнев Владимир Сегргеевич</option>
-                        <option>Радионов Сергей Петрович</option>
-                    </select>
+                    <label for="employee">Ответственный менеджер</label>
+                    <select id="employee" class="input-huge form-control" data-bind="options: employees,
+                       optionsText: 'employeeFullName',
+                       optionsValue: 'employeeId',
+                       value: employeeId,
+                       optionsCaption: ''"></select>
 
-                    <label>Статус</label>
-                    <select class="input-huge">
-                        @*<option></option>*@
-                        <option>Актуальный</option>
-                        <option>Неактуальный</option>
-                        <option>Перезвонить позже</option>
-                        <option>Радионов Сергей Петрович</option>
-                    </select>
+                    <label for="clientStatus">Статус</label>
+                    <select id="clientStatus" class="input-huge form-control" data-bind="options: clientStatuses,
+                       optionsText: 'clientStatusName',
+                       optionsValue: 'clientStatusId',
+                       value: clientStatusId,
+                       optionsCaption: ''"></select>
 
-                    <label>Комментарий</label>
-                    <input class="input-huge" id="lastName">
+                    <label for="comment">Комментарий</label>
+                    <input id="comment" class="input-huge form-control" data-bind="value: comment" placeholder="Введите комментарий...">
                 </div>
 
                 <div class="footer" style="margin-top: 1em;">
                     @*<label class="checkbox inline">
-                            <input type="checkbox" id="inlineCheckbox1" value="option1"> I agree with the terms &amp; conditions
-                        </label>*@
+                <input type="checkbox" id="inlineCheckbox1" value="option1"> I agree with the terms &amp; conditions
+            </label>*@
                     <button type="submit" data-bind="click: save" class="btn btn-success">Сохранить</button>
                 </div>
             </form>

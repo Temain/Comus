@@ -63,7 +63,7 @@
             yAxis: {
                 title: {
                     // enabled: false,
-                    text: 'Произведено, ед.',
+                    text: 'Прибыль, тыс. руб.',
                     style: {
                         color: '#ffffff',
                     }
@@ -152,7 +152,7 @@
             yAxis: {
                 title: {
                     // enabled: false,
-                    text: 'Произведено, ед.',
+                    text: 'Прибыль, тыс. руб.',
                     style: {
                         color: '#ffffff',
                     }
@@ -241,7 +241,7 @@
             yAxis: {
                 title: {
                     // enabled: false,
-                    text: 'Произведено, ед.',
+                    text: 'Прибыль, тыс. руб.',
                     style: {
                         color: '#ffffff',
                     }

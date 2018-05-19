@@ -33,7 +33,7 @@
 }
 #register-form input.input-huge,
 #register-form  select.input-huge{
-  width: 318px;
+  min-width: 318px;
 }
 #register-form .control-group {
   margin-bottom: 0;

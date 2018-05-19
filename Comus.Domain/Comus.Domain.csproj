@@ -115,6 +115,10 @@
     <Compile Include="Migrations\201805191759505_AddEmployee.Designer.cs">
       <DependentUpon>201805191759505_AddEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805191928060_AddComment.cs" />
+    <Compile Include="Migrations\201805191928060_AddComment.Designer.cs">
+      <DependentUpon>201805191928060_AddComment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ClientSource.cs" />
     <Compile Include="Models\ClientStatus.cs" />
@@ -169,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805191759505_AddEmployee.resx">
       <DependentUpon>201805191759505_AddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805191928060_AddComment.resx">
+      <DependentUpon>201805191928060_AddComment.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

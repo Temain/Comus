@@ -120,7 +120,25 @@ var EditClientViewModel = function (app, dataModel) {
 
             var id = this.params['id'];
             if (id === 'create') {
-                app.view(app.Views.CreateClient);
+                $.ajax({
+                    method: 'get',
+                    url: '/api/Client/0',
+                    contentType: "application/json; charset=utf-8",
+                    headers: {
+                        'Authorization': 'Bearer ' + app.dataModel.getAccessToken()
+                    },
+                    success: function (response) {
+                        var model = app.Views.CreateClient;
+                        ko.mapping.fromJS(response, {}, model);
+                        var result = ko.validation.group(model, { deep: true });
+                        if (!model.isValid()) {
+                            result.showAllMessages(false);
+                        }
+                        app.view(model);
+                    }
+                });
+
+                // app.view(app.Views.CreateClient);
             } else {
                 $.ajax({
                     method: 'get',
@@ -164,7 +182,15 @@ var CreateClientViewModel = function (app, dataModel) {
     self.middleName = ko.observable();
     self.phone = ko.observable();
     self.volumeOfPurchases = ko.observable();
-
+    self.clientSourceId = ko.observable();
+    self.clientSources = ko.observableArray([]);
+    self.clientStatusId = ko.observable();
+    self.clientStatuses = ko.observableArray([]);
+    self.productTypeId = ko.observable();
+    self.productTypes = ko.observableArray([]);
+    self.employeeId = ko.observable();
+    self.employees = ko.observableArray([]);
+    self.сomment = ko.observable();
 
     self.save = function () {
         var result = ko.validation.group(self, { deep: true });

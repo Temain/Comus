@@ -65,6 +65,11 @@ namespace Comus.Domain.Models
         public string Phone { get; set; }
 
         /// <summary>
+        /// Комментарий
+        /// </summary>
+        public string Comment { get; set; }
+
+        /// <summary>
         /// Дата создания записи
         /// </summary>
         [JsonIgnore]

@@ -67,6 +67,7 @@ namespace Comus.Web.Models
         /// </summary>
         public int? EmployeeId { get; set; }
         public string EmployeeFullName { get; set; }
+        public List<EmployeeViewModel> Employees { get; set; }
 
         /// <summary>
         /// Телефон
@@ -93,6 +94,11 @@ namespace Comus.Web.Models
         public int? ClientStatusId { get; set; }
         public string ClientStatusName { get; set; }
         public List<ClientStatusViewModel> ClientStatuses { get; set; }
+
+        /// <summary>
+        /// Комментарий
+        /// </summary>
+        public string Comment { get; set; }
 
 
         public void CreateMappings(IConfiguration configuration)

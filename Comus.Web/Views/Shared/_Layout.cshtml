@@ -28,10 +28,11 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class="report"><a href="#" data-bind="click: navigateToReport"><i class="nav-icon glyphicon glyphicon-wrench" aria-hidden="true"></i> Управление</a></li>
-                    <li class="sale"><a href="#" data-bind="click: navigateToSale"><i class="nav-icon glyphicon glyphicon-shopping-cart" aria-hidden="true"></i> Продажи</a></li>
+                    @*<li class="sale"><a href="#" data-bind="click: navigateToSale"><i class="nav-icon glyphicon glyphicon-tasks" aria-hidden="true"></i> Задачи</a></li>*@
                     <li class="client"><a href="#" data-bind="click: navigateToClient"><i class="nav-icon glyphicon glyphicon-copyright-mark" aria-hidden="true"></i> Клиенты</a></li>
+                    <li class="sale"><a href="#" data-bind="click: navigateToSale"><i class="nav-icon glyphicon glyphicon-shopping-cart" aria-hidden="true"></i> Продажи</a></li>
+                    <li class="product"><a href="#" data-bind="click: navigateToProduct"><i class="nav-icon glyphicon glyphicon-barcode" aria-hidden="true"></i> Товар</a></li>
                     <li class="employee"><a href="#" data-bind="click: navigateToEmployee"><i class="nav-icon glyphicon glyphicon-user" aria-hidden="true"></i> Сотрудники</a></li>
-                    <li class="product"><a href="#" data-bind="click: navigateToProduct"><i class="nav-icon glyphicon glyphicon-barcode" aria-hidden="true"></i> Производство</a></li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div><!--/.nav-collapse -->

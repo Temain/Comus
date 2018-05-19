@@ -336,44 +336,112 @@
                 }]
         });     
 
-        var info3 = new Highcharts.Chart({
+        Highcharts.chart('analitycs-advert', {
+            data: {
+                table: 'datatable'
+            },
             chart: {
-                renderTo: 'space',
-                margin: [0, 0, 0, 0],
+                type: 'column',
+                // margin: [0, 0, 0, 0],
                 backgroundColor: null,
                 plotBackgroundColor: 'none',
-
             },
-
             title: {
-                text: null
+                text: ''
             },
-
+            credits: {
+                enabled: false
+            },
+            exporting: { enabled: false },
+            xAxis: {
+                lineColor: '#ffffff',
+                tickColor: '#ffffff',
+                labels: {
+                    style: {
+                        color: '#ffffff',
+                    }
+                },
+                title: {
+                    style: {
+                        color: '#ffffff',
+                    }
+                },
+            },
+            yAxis: {
+                allowDecimals: false,
+                title: {
+                    text: 'Units'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#ffffff'
+                }],
+                lineColor: '#ffffff',
+                tickColor: '#ffffff',
+                labels: {
+                    // enabled: false,
+                    style: {
+                        color: '#ffffff',
+                    }
+                },
+            },
             tooltip: {
                 formatter: function () {
-                    return this.point.name + ': ' + this.y + ' %';
-
+                    return '<b>' + this.series.name + '</b><br/>' +
+                        this.point.y + ' ' + this.point.name.toLowerCase();
                 }
             },
-            series: [
-                {
-                    borderWidth: 2,
-                    borderColor: '#F1F3EB',
-                    shadow: false,
-                    type: 'pie',
-                    name: 'SiteInfo',
-                    innerSize: '65%',
-                    data: [
-                        { name: 'Used', y: 65.0, color: '#fa1d2d' },
-                        { name: 'Rest', y: 35.0, color: '#3d3d3d' }
-                    ],
-                    dataLabels: {
-                        enabled: false,
-                        color: '#000000',
-                        connectorColor: '#000000'
-                    }
-                }]
+            legend: {
+                enabled: true,
+                //align: 'right',
+                //layout: 'vertical',
+                //verticalAlign: 'middle',
+                borderWidth: 0,
+                itemStyle: {
+                    color: '#ffffff',
+                }
+            },
         });
+
+        //var info3 = new Highcharts.Chart({
+        //    chart: {
+        //        renderTo: 'space',
+        //        margin: [0, 0, 0, 0],
+        //        backgroundColor: null,
+        //        plotBackgroundColor: 'none',
+
+        //    },
+
+        //    title: {
+        //        text: null
+        //    },
+
+        //    tooltip: {
+        //        formatter: function () {
+        //            return this.point.name + ': ' + this.y + ' %';
+
+        //        }
+        //    },
+        //    series: [
+        //        {
+        //            borderWidth: 2,
+        //            borderColor: '#F1F3EB',
+        //            shadow: false,
+        //            type: 'pie',
+        //            name: 'SiteInfo',
+        //            innerSize: '65%',
+        //            data: [
+        //                { name: 'Used', y: 65.0, color: '#fa1d2d' },
+        //                { name: 'Rest', y: 35.0, color: '#3d3d3d' }
+        //            ],
+        //            dataLabels: {
+        //                enabled: false,
+        //                color: '#000000',
+        //                connectorColor: '#000000'
+        //            }
+        //        }]
+        //});
 
         $("#btn-blog-next").click(function () {
             $('#blogCarousel').carousel('next')

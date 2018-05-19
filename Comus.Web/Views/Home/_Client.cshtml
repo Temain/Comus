@@ -4,7 +4,7 @@
 
 <div class="row">
     <div class="heading" style="margin-bottom: 1em;">
-        <h2 style="display: inline;">Партнёры</h2>
+        <h2 style="display: inline;">Клиенты</h2>
         <a class="btn create-link pull-right" href="/#client/create"><i class="glyphicon glyphicon-plus" aria-hidden="true"></i> Добавить</a>
     </div>
 </div>
@@ -15,11 +15,14 @@
             <thead>
                 <tr>
                     <th class="text-center">№</th>
-                    <th>Компания</th>
-                    <th>Размер перс. скидки</th>
-                    <th>Средний объём закупок</th>
-                    <th>ФИО ответственного</th>
+                    <th>Организация</th>
+                    <th>Конт. лицо</th>
                     <th class="text-center">Телефон</th>
+                    <th>Интересующая продукция</th>
+                    <th>Источник привлечения</th>
+                    <th>Менеджер</th>
+                    <th>Статус</th>
+
                     <th class="text-center">Действия</th>
                 </tr>
             </thead>
@@ -27,10 +30,14 @@
                 <tr class="odd" data-bind="css: { even: ($index() % 2) == 0 }">
                     <td class="text-center" data-bind="text: ((($parent.selectedPage() - 1) * $parent.selectedPageSize()) + $index() + 1)"></td>
                     <td data-bind="text: company"></td>
-                    <td data-bind="text: (discount() == null ? '0' : discount() + '%')"></td>
-                    <td data-bind="text: (volumeOfPurchases() == null ? '0' : volumeOfPurchases())"></td>
                     <td data-bind="text: clientFullName()"></td>
                     <td class="text-center" data-bind="text: phone"></td>
+                    <td data-bind="text: productTypeName"></td>
+                    <td data-bind="text: clientSourceName"></td>
+                    @*<td data-bind="text: (discount() == null ? '0' : discount() + '%')"></td>*@
+                    @*<td data-bind="text: (volumeOfPurchases() == null ? '0' : volumeOfPurchases())"></td>*@
+                    <td data-bind="text: employeeFullName()"></td>
+                    <td data-bind="text: clientStatusName()"></td>
                     <td class="text-center actions">
                         <a href="#" data-bind="attr : { href: '/#client/' + clientId() }, tooltip: { title: 'Перейти к редактированию', placement: 'left', trigger: 'hover' }"><i class="glyphicon glyphicon-pencil"></i></a>
                         <a href="#" data-bind="attr : { href: '/#client/' + clientId() }, tooltip: { title: 'Печать договора', placement: 'left', trigger: 'hover' }"><i class="glyphicon glyphicon-print text-info"></i></a>

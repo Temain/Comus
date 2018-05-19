@@ -38,6 +38,27 @@ namespace Comus.Domain.Models
         public int PersonId { get; set; }
         public Person Person { get; set; }
 
+        public int? EmployeeId { get; set; }
+        public Employee Employee { get; set; }
+
+        /// <summary>
+        /// Тип продукции
+        /// </summary>
+        public int? ProductTypeId { get; set; }
+        public ProductType ProductType { get; set; }
+
+        /// <summary>
+        /// Источник привлечения
+        /// </summary>
+        public int? ClientSourceId { get; set; }
+        public ClientSource ClientSource { get; set; }
+
+        /// <summary>
+        /// Статус клиента
+        /// </summary>
+        public int? ClientStatusId { get; set; }
+        public ClientStatus ClientStatus { get; set; }
+
         /// <summary>
         /// Номер телефона
         /// </summary>
@@ -62,7 +83,7 @@ namespace Comus.Domain.Models
         public DateTime? DeletedAt { get; set; }
 
 
-        public ICollection<Sale> Sales { get; set; }
+        public List<Sale> Sales { get; set; }
     }
 
 }

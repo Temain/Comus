@@ -103,9 +103,24 @@
     <Compile Include="Migrations\201804211723356_AddConveyorTables.Designer.cs">
       <DependentUpon>201804211723356_AddConveyorTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805191619472_AddNewTables.cs" />
+    <Compile Include="Migrations\201805191619472_AddNewTables.Designer.cs">
+      <DependentUpon>201805191619472_AddNewTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805191649194_AddNewTables2.cs" />
+    <Compile Include="Migrations\201805191649194_AddNewTables2.Designer.cs">
+      <DependentUpon>201805191649194_AddNewTables2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805191759505_AddEmployee.cs" />
+    <Compile Include="Migrations\201805191759505_AddEmployee.Designer.cs">
+      <DependentUpon>201805191759505_AddEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ClientSource.cs" />
+    <Compile Include="Models\ClientStatus.cs" />
     <Compile Include="Models\Conveyor.cs" />
     <Compile Include="Models\ConveyorDefect.cs" />
+    <Compile Include="Models\ProductType.cs" />
     <Compile Include="Models\Sale.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Client.cs" />
@@ -145,6 +160,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804211723356_AddConveyorTables.resx">
       <DependentUpon>201804211723356_AddConveyorTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805191619472_AddNewTables.resx">
+      <DependentUpon>201805191619472_AddNewTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805191649194_AddNewTables2.resx">
+      <DependentUpon>201805191649194_AddNewTables2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805191759505_AddEmployee.resx">
+      <DependentUpon>201805191759505_AddEmployee.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

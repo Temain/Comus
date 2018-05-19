@@ -32,6 +32,7 @@ namespace Comus.Web
                 "~/Scripts/app/employee.viewmodel.js",
                 "~/Scripts/app/client.viewmodel.js",
                 "~/Scripts/app/report.viewmodel.js",
+                "~/Scripts/app/call.viewmodel.js",
                 "~/Scripts/app/_run.js",
                 "~/Scripts/bootstrap-datetimepicker.js",
                 "~/Scripts/lineandbars.js",

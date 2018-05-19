@@ -44,6 +44,7 @@ namespace Comus.Domain.Models
         public DateTime? DeletedAt { get; set; }
 
         public ICollection<Sale> Sales { get; set; }
+        public ICollection<Client> Clients { get; set; }
     }
 
 }

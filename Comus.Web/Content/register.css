@@ -1,4 +1,8 @@
-﻿/* $REGISTER */
+﻿.input-huge {
+    margin-bottom: 1em;
+}
+
+/* $REGISTER */
 #register-wraper {
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
@@ -27,7 +31,8 @@
   margin-bottom: 15px;
   border-bottom: none;
 }
-#register-form input.input-huge {
+#register-form input.input-huge,
+#register-form  select.input-huge{
   width: 318px;
 }
 #register-form .control-group {

@@ -22,6 +22,12 @@ namespace Comus.Web.Models
         public string ProductName { get; set; }
 
         /// <summary>
+        /// Тип продукции
+        /// </summary>
+        public int? ProductTypeId { get; set; }
+        public string ProductTypeName { get; set; }
+
+        /// <summary>
         /// Стоимость
         /// </summary>
         public decimal Cost { get; set; }
@@ -44,7 +50,8 @@ namespace Comus.Web.Models
 
         public void CreateMappings(IConfiguration configuration)
         {
-            configuration.CreateMap<Product, ProductViewModel>("Product");
+            configuration.CreateMap<Product, ProductViewModel>("Product")
+                .ForMember(dest => dest.ProductTypeName, opt => opt.MapFrom(src => src.ProductType.ProductTypeName));
 
             configuration.CreateMap<ProductViewModel, Product>("Product");
         }

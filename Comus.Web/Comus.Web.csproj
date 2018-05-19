@@ -292,8 +292,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ClientSourceViewModel.cs" />
+    <Compile Include="Models\ClientStatusViewModel.cs" />
     <Compile Include="Models\ClientViewModel.cs" />
     <Compile Include="Models\ListViewModel.cs" />
+    <Compile Include="Models\ProductTypeViewModel.cs" />
     <Compile Include="Models\SaleViewModel.cs" />
     <Compile Include="Models\ProductViewModel.cs" />
     <Compile Include="Models\EmployeeViewModel.cs" />
@@ -355,6 +358,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\admin.js" />
     <Content Include="Scripts\alert.js" />
+    <Content Include="Scripts\app\call.viewmodel.js" />
     <Content Include="Scripts\app\sale.viewmodel.js" />
     <Content Include="Scripts\app\report.viewmodel.js" />
     <Content Include="Scripts\app\client.viewmodel.js" />
@@ -627,6 +631,7 @@
     <Content Include="Views\Home\_CreateSale.cshtml" />
     <Content Include="Views\Home\_EditSale.cshtml" />
     <Content Include="Views\Shared\_LayoutTables.cshtml" />
+    <Content Include="Views\Home\_Call.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

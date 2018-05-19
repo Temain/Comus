@@ -30,7 +30,7 @@ namespace Comus.Web.Controllers
             var clients = UnitOfWork.Repository<Client>()
                 .Get(orderBy: o => o.OrderBy(p => p.Person.LastName)
                         .ThenBy(p => p.Person.FirstName),
-                    includeProperties: "Person");
+                    includeProperties: "Person, ClientSource, ProductType, ClientStatus, Employee, Employee.Person");
 
             var clientViewModels = Mapper.Map<IEnumerable<Client>, IEnumerable<ClientViewModel>>(clients);
 
@@ -44,7 +44,7 @@ namespace Comus.Web.Controllers
                 .GetQ(
                     orderBy: o => o.OrderBy(p => p.Person.LastName)
                         .ThenBy(p => p.Person.FirstName),
-                    includeProperties: "Person");
+                    includeProperties: "Person, ClientSource, ProductType, ClientStatus, Employee, Employee.Person");
 
             var clients = clientsList
                 .Skip((page - 1) * pageSize)
@@ -68,7 +68,7 @@ namespace Comus.Web.Controllers
         public IHttpActionResult GetClient(int id)
         {
             var client = UnitOfWork.Repository<Client>()
-                .Get(x => x.ClientId == id, includeProperties: "Person")
+                .Get(x => x.ClientId == id, includeProperties: "Person, ClientSource, ProductType, ClientStatus, Employee, Employee.Person")
                 .SingleOrDefault();
             if (client == null)
             {
@@ -76,6 +76,15 @@ namespace Comus.Web.Controllers
             }
 
             var clientViewModel = Mapper.Map<Client, ClientViewModel>(client);
+
+            var clientSources = UnitOfWork.Repository<ClientSource>().Get().ToList();
+            clientViewModel.ClientSources = Mapper.Map<List<ClientSource>, List<ClientSourceViewModel>>(clientSources);
+
+            var productTypes = UnitOfWork.Repository<ProductType>().Get().ToList();
+            clientViewModel.ProductTypes = Mapper.Map<List<ProductType>, List<ProductTypeViewModel>>(productTypes);
+
+            var clientStatuses = UnitOfWork.Repository<ClientStatus>().Get().ToList();
+            clientViewModel.ClientStatuses = Mapper.Map<List<ClientStatus>, List<ClientStatusViewModel>>(clientStatuses);
 
             return Ok(clientViewModel);
         }

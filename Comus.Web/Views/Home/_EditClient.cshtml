@@ -1,5 +1,67 @@
 ﻿<!-- ko with: editClient -->
-<link href="~/Content/table.css" rel="stylesheet">
+<link href="~/Content/register.css" rel="stylesheet" />
+
+<div class="row">
+    <div class="col-sm-offset-3 col-sm-6 col-lg-6">
+        <div id="register-wraper">
+            <form id="register-form" class="form">
+                <legend>Редактирование</legend>
+
+                <div class="body">
+                    <label for="name">Организация</label>
+                    <input class="input-huge" id="company" data-bind="value: company">
+
+                    <label for="phone">Номер телефона</label>
+                    <input id='phone' class="input-huge" data-bind="value: phone" />
+
+                    <label for="surname">Интересующая продукция</label>
+                    <select class="input-huge">
+                        @*<option></option>*@
+                        <option>Упаковка картонная</option>
+                    </select>
+
+                    <label for="surname">Источник обращения</label>
+                    <select class="input-huge">
+                        @*<option></option>*@
+                        <option>Сайт</option>
+                        <option>Соц. сети</option>
+                        <option>Наружная реклама</option>
+                        <option>Indoor реклама</option>
+                    </select>
+
+                    <label>Ответственный менеджер</label>
+                    <select class="input-huge">
+                        @*<option></option>*@
+                        <option>Огнев Владимир Сегргеевич</option>
+                        <option>Радионов Сергей Петрович</option>
+                    </select>
+
+                    <label>Статус</label>
+                    <select class="input-huge">
+                        @*<option></option>*@
+                        <option>Актуальный</option>
+                        <option>Неактуальный</option>
+                        <option>Перезвонить позже</option>
+                        <option>Радионов Сергей Петрович</option>
+                    </select>
+
+                    <label>Комментарий</label>
+                    <input class="input-huge" id="lastName">
+                </div>
+
+                <div class="footer" style="margin-top: 1em;">
+                    @*<label class="checkbox inline">
+                            <input type="checkbox" id="inlineCheckbox1" value="option1"> I agree with the terms &amp; conditions
+                        </label>*@
+                    <button type="submit" data-bind="click: save" class="btn btn-success">Сохранить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@*<link href="~/Content/table.css" rel="stylesheet">
 <link href="~/Content/Site.css" rel="stylesheet" />
 <div class="heading">
     <a href="#" class="back-link" data-bind="click: $root.navigateToClient, tooltip: { title: 'Вернуться назад', placement: 'bottom', trigger: 'hover' }"><i class="glyphicon glyphicon-circle-arrow-left"></i></a>
@@ -58,5 +120,5 @@
             <button type="submit" class="btn create-link" data-bind="click: save"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Сохранить</button>
         </div>
     </div>
-</form>
+</form>*@
 <!-- /ko -->

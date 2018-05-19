@@ -18,6 +18,12 @@ namespace Comus.Domain.Models
         public int ProductId { get; set; }
 
         /// <summary>
+        /// Тип продукции
+        /// </summary>
+        public int? ProductTypeId { get; set; }
+        public ProductType ProductType { get; set; }
+
+        /// <summary>
         /// Название товара
         /// </summary>
         public string ProductName { get; set; }

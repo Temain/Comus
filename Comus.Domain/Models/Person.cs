@@ -61,11 +61,13 @@ namespace Comus.Domain.Models
         public DateTime? DeletedAt { get; set; }
 
 
-        public ICollection<Employee> Employees { get; set; }
+        public List<Employee> Employees { get; set; }
 
-        public ICollection<Client> Clients { get; set; }
+        public List<Client> Clients { get; set; }
 
-        public ICollection<ApplicationUser> ApplicationUsers { get; set; }
+        public List<ClientRequest> ClientRequests { get; set; }
+
+        public List<ApplicationUser> ApplicationUsers { get; set; }
 
 
         /// <summary>

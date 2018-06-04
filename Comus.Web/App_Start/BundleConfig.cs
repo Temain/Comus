@@ -31,6 +31,7 @@ namespace Comus.Web
                 "~/Scripts/app/product.viewmodel.js",
                 "~/Scripts/app/employee.viewmodel.js",
                 "~/Scripts/app/client.viewmodel.js",
+                "~/Scripts/app/clientRequest.viewmodel.js",
                 "~/Scripts/app/report.viewmodel.js",
                 "~/Scripts/app/call.viewmodel.js",
                 "~/Scripts/app/_run.js",
@@ -53,7 +54,8 @@ namespace Comus.Web
                 "~/Scripts/highcharts/highcharts.js",
                 "~/Scripts/highcharts/highcharts-more.js",
                 "~/Scripts/highcharts/modules/data.js",
-                "~/Scripts/highcharts/modules/exporting.js"));
+                "~/Scripts/highcharts/modules/exporting.js",
+                "~/Scripts/highcharts/modules/funnel.js"));
 
             // Используйте версию Modernizr для разработчиков, чтобы учиться работать. Когда вы будете готовы перейти к работе,
             // используйте средство построения на сайте http://modernizr.com, чтобы выбрать только нужные тесты.

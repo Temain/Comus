@@ -119,7 +119,17 @@
     <Compile Include="Migrations\201805191928060_AddComment.Designer.cs">
       <DependentUpon>201805191928060_AddComment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806042005191_AddClientRequest.cs" />
+    <Compile Include="Migrations\201806042005191_AddClientRequest.Designer.cs">
+      <DependentUpon>201806042005191_AddClientRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806042009330_AddTimeFields.cs" />
+    <Compile Include="Migrations\201806042009330_AddTimeFields.Designer.cs">
+      <DependentUpon>201806042009330_AddTimeFields.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ClientRequestStatus.cs" />
+    <Compile Include="Models\ClientRequest.cs" />
     <Compile Include="Models\ClientSource.cs" />
     <Compile Include="Models\ClientStatus.cs" />
     <Compile Include="Models\Conveyor.cs" />
@@ -176,6 +186,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805191928060_AddComment.resx">
       <DependentUpon>201805191928060_AddComment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806042005191_AddClientRequest.resx">
+      <DependentUpon>201806042005191_AddClientRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806042009330_AddTimeFields.resx">
+      <DependentUpon>201806042009330_AddTimeFields.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

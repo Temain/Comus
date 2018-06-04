@@ -1,21 +1,26 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Comus.Domain.Models
 {
     /// <summary>
-    /// Источник привлечения клиента
+    /// Ствтус заявки
     /// </summary>
-    [Table("ClientSource", Schema = "dbo")]
-    public class ClientSource
+    [Table("ClientRequestStatus", Schema = "dbo")]
+    public class ClientRequestStatus
     {
-        public int ClientSourceId { get; set; }
-        public string ClientSourceName { get; set; }
+        /// <summary>
+        /// Идентификатор
+        /// </summary>
+        public int ClientRequestStatusId { get; set; }
+
+        /// <summary>
+        /// Статус
+        /// </summary>
+        public string ClientRequestStatusName { get; set; }
 
         /// <summary>
         /// Дата создания записи
@@ -35,7 +40,7 @@ namespace Comus.Domain.Models
         [JsonIgnore]
         public DateTime? DeletedAt { get; set; }
 
-        public List<Client> Clients { get; set; }
         public List<ClientRequest> ClientRequests { get; set; }
     }
+
 }

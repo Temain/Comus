@@ -404,6 +404,55 @@
             },
         });
 
+        Highcharts.chart('sales-funnel', {
+            credits: {
+                enabled: false
+            },
+            chart: {
+                type: 'funnel',
+                marginRight: 100,
+                backgroundColor: null,
+                plotBackgroundColor: 'none',
+            },
+            exporting: { enabled: false },
+            title: {
+                text: '',
+                x: -50
+            },
+            plotOptions: {
+                series: {
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b> ({point.y:,.0f})',
+                        color: '#ffffff', // (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',
+                        softConnector: true
+                    },
+                    neckWidth: '30%',
+                    neckHeight: '25%',
+                    color: '#ffffff'
+                    //-- Other available options
+                    // height: pixels or percent
+                    // width: pixels or percent
+                }
+            },
+            legend: {
+                enabled: false,
+                borderWidth: 0,
+                itemStyle: {
+                    color: '#ffffff',
+                }
+            },
+            series: [{
+                name: 'Unique users',
+                data: [
+                    ['Получено заявок', 256],
+                    ['Обработано заявок', 152],
+                    ['Сделок', 21],
+                    ['Получили товар', 19]
+                ]
+            }]
+        });
+
         //var info3 = new Highcharts.Chart({
         //    chart: {
         //        renderTo: 'space',

@@ -28,8 +28,7 @@ namespace Comus.Web.Controllers
         public IEnumerable<EmployeeViewModel> GetEmployees()
         {
             var employees = UnitOfWork.Repository<Employee>()
-                .Get(
-                    orderBy: o => o.OrderBy(p => p.Person.LastName)
+                .Get(orderBy: o => o.OrderBy(p => p.Person.LastName)
                         .ThenBy(p => p.Person.FirstName),
                     includeProperties: "Person");
 
